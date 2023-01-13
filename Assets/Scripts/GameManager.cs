@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     {
         if (GameManager.instance != null)
         {
-
             Destroy(gameObject);
             Destroy(player.gameObject);
             Destroy(floatingTextManager.gameObject);
@@ -50,6 +49,7 @@ public class GameManager : MonoBehaviour
     public int moneyAmount;
     public int experience;
     public int weaponLevel;
+    public string[] scenes;
     public Image health;
 
     //Upgrade weapon
@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
         int exp = 0;
 
         while (r < level)
-        {
+        {   
             exp += xpTable[r];
             r++;
         }
@@ -115,6 +115,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void LoadLevel(int level)
+    {
+        SceneManager.LoadScene(scenes[level-1]);
+    }
+
     public void Update()
     {
         float ratio = (float)player.hitpoint / (float)player.maxHitpoint;
@@ -137,7 +142,6 @@ public class GameManager : MonoBehaviour
 
     public void SaveState()
     {
-
         string s = playerSkin.ToString() + "|";
         s += moneyAmount.ToString() + "|";
         s += experience.ToString() + "|";
@@ -152,8 +156,7 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoad(Scene s, LoadSceneMode mode)
     {
         player.transform.position = GameObject.Find("SpawnPoint").transform.position;
-        saved = false;
-        // LoadEnemyHealth();
+     
     }
 
     public void LoadState(Scene s, LoadSceneMode mode)
@@ -171,9 +174,8 @@ public class GameManager : MonoBehaviour
             weapon.LoadWeapon(int.Parse(data[3]));
 
             SetPlayerLevel(GetCurrentLevel());
-
+            LoadLevel(GetCurrentLevel());
             Debug.Log("LoadState");
-
 
         }
         else

@@ -15533,6 +15533,7 @@ MonoBehaviour:
   moneyAmount: 2
   experience: 0
   weaponLevel: 0
+  scenes: []
   health: {fileID: 1200881550}
 --- !u!4 &283472338
 Transform:
@@ -20344,8 +20345,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  scenes:
-  - Main
+  portalLevel: 1
 --- !u!61 &826293196
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36794,11 +36794,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SkullFace
-      objectReference: {fileID: 0}
-    - target: {fileID: 8656151844332638351, guid: 81f4118c30a48704ebea2782821d16ec,
-        type: 3}
-      propertyPath: routeRange
-      value: 1.79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81f4118c30a48704ebea2782821d16ec, type: 3}
@@ -64736,7 +64731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5475217919073702576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.004, y: 0.15, z: 0}
+  m_LocalPosition: {x: 0.004, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5475217919367398699}
@@ -64887,7 +64882,7 @@ MonoBehaviour:
   pushRecoverySpeed: 0.32
   immuneTime: 1
   lastImmune: 0
-  xpValue: 1
+  xpValue: 20
   triggerLength: 0.4
   chaseLength: 0.7
   isDead: false
@@ -65127,7 +65122,7 @@ MonoBehaviour:
   pushRecoverySpeed: 0.26
   immuneTime: 1.06
   lastImmune: 0
-  xpValue: 5
+  xpValue: 35
   triggerLength: 0.58
   chaseLength: 0.9
   isDead: false

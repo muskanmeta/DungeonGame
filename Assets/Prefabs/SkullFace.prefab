@@ -300,7 +300,7 @@ MonoBehaviour:
   pushRecoverySpeed: 0.2
   immuneTime: 1
   lastImmune: 0
-  xpValue: 1
+  xpValue: 50
   triggerLength: 0.73
   chaseLength: 1.57
   isDead: false
